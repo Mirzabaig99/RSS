@@ -15,5 +15,5 @@ Feature: To test + the login Functionality
     Then user should navigate to homePage
 
     Examples: 
-      | usermane | Password |
-      | A2334    | a1234567  |
+      | usermane | Password  |
+      | A2334    | 123456789 |

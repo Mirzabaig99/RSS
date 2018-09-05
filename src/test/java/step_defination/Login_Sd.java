@@ -10,14 +10,14 @@ import utility.CreateReport;
 import utility.Take_ScreenShots;
 
 public class Login_Sd extends Setup {
-
-	Login_POM login = new Login_POM(driver);
 	CreateReport report = new CreateReport(driver);
 	Take_ScreenShots screenshots = new Take_ScreenShots();
 
+	Login_POM login = new Login_POM(driver,report, screenshots );
+	
 	@Then("^User in on \"([^\"]*)\" URL$")
 	public void user_in_on_URL(String arg1) {
-
+		
 	}
 
 	@Given("^user is on Lopginpage$")
@@ -30,8 +30,8 @@ public class Login_Sd extends Setup {
 		login.enter_EmployeeID(EmpID);
 		screenshots.takeScreenShot(driver, "RCP");
 		report.CreateRep("REPORT");
-		report.startTest("Report Page Navigation");
-
+		report.startTest("Login Page Navigation");
+		report.INFO("EmployeeID");
 	}
 
 	@When("^user enters \"([^\"]*)\" in password textbox$")
@@ -53,7 +53,8 @@ public class Login_Sd extends Setup {
 	@Then("^user should navigate to homePage$")
 	public void user_should_navigate_to_homePage() throws IOException, InterruptedException {
 
-		login.ClickReport();
+		Thread.sleep(2000);
+//		login.ClickReport();
 		screenshots.takeScreenShot(driver, "RCP");
 		report.INFO("Report clicked");
 		report.PASS("Resource Scheduling System");

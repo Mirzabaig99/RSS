@@ -5,7 +5,7 @@ Feature: To test the functionality of report screen
     And User launches the URL
     And User in on "Resource Scheduling Application" URL
     When user enters "A2334" in EmployeeID textbox
-    And user enters "a1234567" in password textbox
+    And user enters "123456789" in password textbox
     And user cliks on LoginButton
     Then user should navigate to homePage
 
@@ -21,5 +21,5 @@ Feature: To test the functionality of report screen
     Then Clicks on Get Report
 
     Examples: 
-      | screen                     | resoutrce Type | Project Type | Location | Department | Allocation Start Date | Allocation End Date |
-      | Resource Allocation Report | All            | All          | All      | All        | 21/8/2000             | 21/8/2000           |
+      | screen | resoutrce Type | Project Type | Location | Department | Allocation Start Date | Allocation End Date |
+      | report | All            | All          | All      | All        | 21/8/2000             | 21/8/2000           |

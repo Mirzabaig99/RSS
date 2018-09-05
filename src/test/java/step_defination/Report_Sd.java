@@ -5,18 +5,18 @@ import java.awt.AWTException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pom.Login_POM;
 import pom.Report_POM;
 import pom.Setup;
+import utility.AllPage_Verify;
+
 
 public class Report_Sd extends Setup {
 
 	Report_POM report = new Report_POM(driver);
-	Login_POM login = new Login_POM(driver);
-
+	AllPage_Verify verifyPage = new AllPage_Verify();
 	@Given("^User is navugated to \"([^\"]*)\"$")
 	public void user_is_navugated_to(String ExpName) {
-		report.Page_Verify(ExpName);
+		verifyPage.Page_Verify(ExpName);
 	}
 
 	/*
@@ -25,7 +25,7 @@ public class Report_Sd extends Setup {
 	 * System.out.println("for resource dropdown"); //
 	 * report.Report_Type("All"); }
 	 */
-	
+
 	@When("^User select \"([^\"]*)\" for resource dropdown$")
 	public void user_select_for_resource_dropdown(String arg1) {
 		System.out.println("for resource dropdown");
